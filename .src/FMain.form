@@ -1,0 +1,17 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,71,59)
+  Icon = Picture["intercambiador.png"]
+  { TextArea1 TextArea
+    MoveScaled(1,1,69,25)
+  }
+  { TextArea2 TextArea
+    MoveScaled(1,27,69,27)
+  }
+  { Button1 Button
+    MoveScaled(58,54,12,5)
+    Text = ("Copiar")
+    Picture = Picture["icon:/22/copy"]
+  }
+}

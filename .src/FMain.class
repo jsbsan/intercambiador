@@ -1,0 +1,70 @@
+' Gambas class file
+
+Public Sub Form_Open()
+
+    Dim texto As String
+    Dim lista As String[]
+    Dim a As Integer
+
+    texto = Clipboard.Paste("text/plain")
+
+    Print texto
+
+    lista = Split(texto, "\n")
+
+    Print "------- lista original ------------"
+    For a = 0 To lista.count - 1
+
+        Print lista[a]
+        TextArea1.text &= lista[a] & "\n"
+    Next
+
+    If Not espar(lista.count) Then
+        lista.Add("") 'añado un valor
+    Endif
+
+    For a = 1 To lista.count - 2 Step 2 'con cabecera
+        intercambia(a, a + 1, lista)
+
+    Next
+
+    Print "------- lista cambiada ------------"
+    For a = 0 To lista.count - 1
+
+        Print lista[a]
+        TextArea2.text &= lista[a] & "\n"
+    Next
+
+End
+
+Public Function espar(valor As Integer) As Boolean
+
+    If valor / 2 = Round(valor / 2, 0) Then
+        Return True
+    Else
+        Return False
+    Endif
+
+End
+
+Public Sub intercambia(v1 As Integer, v2 As Integer, cadenas As String[])
+
+    Dim tmp As String
+
+    tmp = cadenas[v1]
+    cadenas[v1] = cadenas[v2]
+    cadenas[v2] = tmp
+
+End
+
+'ejemplo
+'1
+'2
+'3
+'4
+
+Public Sub Button1_Click()
+
+    Clipboard.Copy(TextArea2.text)
+
+End
