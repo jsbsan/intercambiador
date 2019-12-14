@@ -8,6 +8,8 @@ Public Sub Form_Open()
 
     texto = Clipboard.Paste("text/plain")
 
+    FormEspere.Show()
+    Wait 0.1
     Print texto
 
     lista = Split(texto, "\n")
@@ -34,6 +36,7 @@ Public Sub Form_Open()
         Print lista[a]
         TextArea2.text &= lista[a] & "\n"
     Next
+    FormEspere.Close()
 
 End
 

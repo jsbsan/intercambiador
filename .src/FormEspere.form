@@ -1,0 +1,17 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,59,32)
+  Arrangement = Arrange.Fill
+  { TextLabel1 TextLabel
+    MoveScaled(6,1,46,25)
+    Font = Font["+7"]
+    Background = &H1FFF1F&
+    Expand = True
+    Text = ("Espere....\nGenerando.") & "..."
+    Alignment = Align.Center
+  }
+  { Timer1 #Timer
+    #MoveScaled(48,22)
+  }
+}
